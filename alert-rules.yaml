@@ -1,3 +1,8 @@
+# alert rules are all stored in this part of the cluster:
+# /etc/prometheus/rules/prometheus-monitoring-kube-prometheus-prometheus-rulefiles-0/*.yaml
+# running this as a Prometheus Operator means the addition of alert rules will automatically be handled
+# running Prometheus stack outside of K8s cluster means we would have to add this in manually and reload Prometheus
+
 name: HostHighCpuLoad
 expr: 100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[2m])) * 100) > 50
 for: 2m
