@@ -11,4 +11,7 @@ spec:
       from: 'robert@stapleton-family.net'
       smarthost: "stapletonfamily-net02c.mail.protection.outlook.com"
       authUsername: 'robert@stapleton-family.net'
+        # access secret in k8s to secure password
       authPassword:
+        name: M365-cred
+        key: password
