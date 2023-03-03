@@ -1,0 +1,9 @@
+name: HostHighCpuLoad
+expr: 100 - (avg by(instance) (rate(node_cpu_seconds_total{mode="idle"}[2m])) * 100) > 50
+for: 2m
+labels:
+  severity: warning
+  namespace: monitoring
+annotations:
+  description: "Node CPU over 50%\n Value = {{ $value }}\n Instance = {{ $labels.instance }}\n"
+  summary: "Host CPU High"
