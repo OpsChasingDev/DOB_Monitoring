@@ -4,6 +4,14 @@ metadata:
   name: alert-config
   namespace: monitoring
 spec:
+  route:
+    routes:
+    - matchers:
+      - name: alertname
+        value: HostHighCpuLoad
+    - matchers:
+      - name: alertname
+        value: KubernetesPodCrashLoop
   receivers:
   - name: 'email'
     emailConfigs:
