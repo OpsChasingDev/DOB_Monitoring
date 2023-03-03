@@ -2,3 +2,6 @@ serviceMonitor:
   enabled: true
   labels:
     release: monitoring
+
+# this is how the sidecar connects to Redis container to get information before translating and exposing to Prometheus to scrape
+redisAddress: redis://redis-cart:6379
