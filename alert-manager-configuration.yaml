@@ -5,6 +5,8 @@ metadata:
   namespace: monitoring
 spec:
   route:
+    receiver: 'email'
+    repeatInterval: 30m
     routes:
     - matchers:
       - name: alertname
