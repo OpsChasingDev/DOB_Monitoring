@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: alert-config
+  namespace: monitoring
+spec:
+  receivers:
+  - name: 'email'
+    emailConfigs:
+    - to: 'robert@stapleton-family.net'
+      from: 'robert@stapleton-family.net'
+      smarthost: "stapletonfamily-net02c.mail.protection.outlook.com"
+      authUsername: 'robert@stapleton-family.net'
+      authPassword:
